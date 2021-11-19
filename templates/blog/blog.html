@@ -1,0 +1,72 @@
+{% extends "blog_base.html" %}
+{% block content %}  
+{% import uuid %}
+{% if current_user.decode('utf8') == userName %}
+<form role="form" action="/blogwriting" method="post" id="blog-form">
+    <div class="form-group">
+        <input type="text" class="form-control" value="[yyyy.MM.dd - yyyy.MM.dd] - Weekly Progress" name="title" id="blog-form-title">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" rows="7" placeholder="" name="content" id="blog-form-content">
+            #### **What did I do last week?**
+            ##### RESEARCH
+            - ...
+            ##### ADMIN
+            - ...
+            ##### OUTCOME
+            - ...
+            # 
+            ---
+            #### **What am I doing?**
+            ##### RESEARCH
+            - ...
+            ##### ADMIN
+            - ...
+    </textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-lg btn-block" href="/blog">{{ _("Save") }}</button>
+</form>
+{% end %}
+</div>
+<div class="clearfix"></div>
+<br>
+<table class="table">
+{% for x in blogList %}
+<tr>
+    <th scope="row"></th>
+    <td>
+        <a data-toggle="collapse" href="#b{{ x[1][-1] }}" role="button" aria-expanded="false" aria-controls="b{{ x[1][-1] }}" onclick="contentRequest('t{{ str(uuid.uuid3(uuid.NAMESPACE_DNS,x[0])) }}', '{{ userName }}', 'b{{ x[1][-1] }}')">{{ x[0].rstrip(".md") }}</a>
+        <div class="collapse mt-3" id="b{{ x[1][-1] }}">
+            <div class="card card-body">
+                
+            </div>
+            {% if current_user.decode('utf8') == userName %}
+            <div class="text-right blog-options">
+            <a href="#blog-list" onclick="contentRevise('{{ x[0].rstrip(".md") }}')">Revise</a> <span class="text-muted">|</span> <a href="/blogdeleting?title={{ x[0] }}" class="text-danger">Delete</a>
+            </div>
+            {% end %}
+        </div>
+    </td>
+</tr>
+{% end %}
+</table>
+<hr>
+<div class="row justify-content-md-center">
+    <nav aria-label="...">
+        <ul class="pagination pagination-lg">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% end %}
+{% block customJS %}
+<script src="{{ static_url('scripts/blog.js') }}"></script> 
+{% end %}

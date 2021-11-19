@@ -1,0 +1,12 @@
+{% extends "../main/main_base.html" %} {% block main %}
+<main>
+    <div class="container">
+        <div class="col-xl-12">
+            {% raw content %}
+        </div>
+    </div>
+</main>
+{% end %}
+{% block customJS %}
+<script src="{{ static_url('scripts/facilities.js') }}"></script>
+{% end %}
