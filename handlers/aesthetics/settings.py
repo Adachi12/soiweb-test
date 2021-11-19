@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+'''
+WebpageList = [
+    # More and more use interactive webpage
+
+    # Trial
+    #'999*ted.com',
+
+    '0*nounplus.net',
+    # Webby
+    #'1*http://projects.two-n.com/world-gender/',
+    '1*two-n.com',
+    '2*makeitok.org',
+
+    #Brand
+    '3*mozilla.org',
+    '4*segmentfault.com',
+    '5*kameisyouten.ocnk.net',
+
+    #'6*https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_setup/py_intro/py_intro.html#intro',
+    '6*docs.opencv.org',
+    
+    #'7*http://blog.sciencenet.cn/blog.php',
+    '7*blog.sciencenet.cn',
+    '8*yinwang.org',
+
+    #'9*http://www.richyli.com/tool/loremipsum/',
+    '9*richyli.com',
+    '10*pxtoem.com',
+
+    '11*labinthewild.org',
+    '12*yatani.jp',
+    '13*interaction-design.org',
+    '14*jlpt.jp',
+    '15*pantone.com',
+    '16*blog.yitianshijie.net',
+    '17*infoq.com',
+    '18*techplay.jp'
+    #'19*'
+]
+'''
+
+WebpageList = [
+#'999*ted.com',
+    '0*theboneandjointcenter.com',
+    '1*theborneopost.com',
+    '2*two-n.com',
+    '3*swellnet.com',
+    '4*klex.ru',    
+    '5*disney.co.jp',
+    '6*wikipedia.org',
+    '7*news.yahoo.co.jp',
+    '8*huxiu.com',
+    '9*chi2019.acm.org',    
+    '10*cheshi.com',
+    '11*humblebundle.com',
+    '12*theatlantic.com',
+    '13*cvpr2018.thecvf.com',   
+    '14*microsoft.com',
+    '15*opera.com',
+    '16*labinthewild.org',
+    '17*macg.co',    
+    '18*richyli.com',
+    '19*pxtoem.com', 
+    '20*dna.fr',    
+    '21*javadrive.jp',
+    '22*jcr.incites.thomsonreuters.com',
+    '23*infoq.com',    
+    '24*jiqimao.tv',
+    '25*clamav.net',
+    '26*bootcdn.cn',
+    '27*runoob.com',
+    '28*tensorfly.cn',
+    '29*journaldugeek.com', 
+    '30*matetranslate.com',
+    '31*kameisyouten.ocnk.net',
+    '32*gingerweb.jp',
+    '33*cp.pocky.jp',
+    '34*aladdin-aic.com',
+    '35*trafst.jp',
+    '36*cps.com.cn',
+    '37*techplay.jp',    
+    '38*kokage-m.com',
+    '39*tech-camp.in',
+    '40*hasegawa-heart.com',    
+    '41*steakland.jp',
+    '42*showroomprive.com',
+    '43*imas-cg.net',
+    '44*filetender.com',
+    '45*hexo.io',
+    '46*yinwang.org',
+    '47*blog.yitianshijie.net',
+    '48*yatani.jp',
+    '49*qiita.com',
+    '50*52nlp.cn',
+    '51*guidetojapanese.org',
+    '52*olderadults.mobi',
+    '53*blog.whatsapp.com',
+    '54*tech-jp.co.jp',
+    '56*sankei.com',
+    '55*lomake.fi',
+    '57*bgmaimuna.com',
+    '58*0dt.net',
+    '59*web.ics.purdue.edu',
+    '60*canon-foundation.jp',
+    '61*tech.nikkeibp.co.jp',
+    '62*jp.techcrunch.com',
+    '63*capcom.co.jp',
+    '64*blog.sciencenet.cn',
+    '65*pantone.com',
+    '66*cerezo.jp',
+    '67*news.livedoor.com',
+
+    # One more overlap, delete
+    '68*360.cn',
+
+    '69*tokai-tv.com', 
+    '70*life-is-tech.com',
+    '71*bloomberg.co.jp',
+    '72*boagworld.com',
+    '73*designmodo.com',
+    '74*forbesjapan.com',
+    '75*guzen.biz',
+    '76*hatenablog.jp',
+    '77*ikedahayato.com',
+    '78*kochi-arindo.com',
+    '79*lamp-guesthouse.com',
+    '80*liginc.co.jp',
+    '81*usabilitygeek.com',
+    '82*yoichiochiai.com',
+    '83*zeyo.jp',
+    '84*berg.jp',
+    '85*billysbakerynyc.com',
+    '86*buenosairesbakery.com.ar',
+    '87*cafe-sanctuary.jp',
+    '88*flanet.web.fc2.com',
+    '89*fmltd.co.jp',
+
+    # can not show, delete
+    #'90*hanakinoboru.com.png',
+    '90*security.ec-current.com',
+
+    '91*heidicohen.com',
+    '92*ironwork.jp',
+    '93*jimmakos.com',
+    '94*keycoffee.co.jp',
+    '95*shimomaruko-ikkyu.com',
+    '96*thehairypotato.co',
+    '97*towafood-net.co.jp',
+    '98*americanfruitandproduce.com',
+    '99*frenchbakerynj.com',
+    '100*ren-shinjuku.com',
+    '101*econlib.org',
+    '102*nateas.com',
+    '103*kurose.co.jp',
+    '104*sonic1.co.jp',
+    '105*sundaico.co.jp',
+    '106*ren-shinjuku.com',
+    '107*art-sys.co.jp',
+    '108*kasinoki.co.jp',
+    '109*nagainori.co.jp',
+    '110*yamasakigiken.co.jp',
+    '111*mozilla.org',
+    '112*booth.pm.ja',
+    '113*chifure.co.jp',
+    '114*fantia.jp',
+    '115*freebiesbug.com',
+    '116*galaxymobile.jp',
+
+    '117*gmo.jp',
+
+    '118*icotto.jp',
+    '119*inakami.net',
+    '120*maybelline.co.jp',
+    '121*oiax.jp',
+    '122*paiza.jp',
+    '123*railstutorial.jp',
+    '124*saruwakakun.com',
+    '125*sejuku.net',
+    '126*skima.jp',
+    '127*yuchrszk.blogspot.com',
+    '128*yumeno.jp',
+    '129*superprof.fr',
+    '130*nounplus.net',
+    '131*hdpfans.com',
+    '132*ho-ginza.net',
+    '133*sekimoto.dental',
+    '134*coming-saji.com',
+    '135*stratechery.com',
+    '136*theclinic.cl',
+    '137*interaction-design.org',
+    '138*jlpt.jp',
+    '139*kenkun-jinja.org',
+    '140*ubejinja.or.jp',
+    '141*jiankang.com',
+    '142*hea.cn',
+    '143*jfc.or.jp',
+    '144*kudago.com',
+    '145*coolmath.com',
+    '146*solvemymath.com',
+    '147*mathleague.com',
+    '148*math.com',
+    '149*mathplayground.com',
+
+    # Ayumu's Chinese & Japanese Webpage
+    '150*bilibili.com',
+    '151*nicovideo.jp',
+
+    '152*rakuten.co.jp',
+    '153*taobao.com',
+
+    '154*ihotwind.cn',
+    '155*uniqlo.com.jp',
+
+    '156*dianping.com',
+    '157*tabelog.com',
+
+    '158*sina.com.cn',
+    '159*yahoo.co.jp',
+
+    '160*1688.com',
+    '161*netsea.jp',
+
+    '162*bj.ganji.com',
+    '163*sumaity.com',
+
+    '164*estar.jp',
+    '165*hongxiu.com',
+
+    '166*tapple.me',
+    '167*baihe.com'
+
+    #'168*360.cn',->68
+    #'169*security.ec-current.com'->90
+]
+
+suncolor_sequence = ['#FF1E1E', '#FF7215', '#FFBB04', '#FFF72C', '#D1FF3F',
+                '#97FF4D', '#1ACD00', '#008930', '#00D3E8', '#27A3FF',
+                '#005EFE', '#0200AC', '#9975FF', '#8724FF', '#CD44FF',
+                '#FF2ED6']
